@@ -38,12 +38,15 @@ class AppiumLibCoreTest
       caps: {
         platformName: :ios,
         automationName: 'XCUITest',
-        app: 'test/functional/app/UICatalog.app',
-        platformVersion: '10.3',
-        deviceName: 'iPhone Simulator',
-        useNewWDA: true,
-        useJSONSource: true,
-        someCapability: 'some_capability'
+        platformVersion: '11.2',
+        bundleId: 'com.apple.mobilecal',
+        # deviceName: 'iPhone Simulator', # for simulator
+        deviceName: "Kazu's iPhone SE", # For a real device
+        udid: 'auto',                   # For a real device
+        xcodeOrgId: 'Z96JDV3GJT',
+        xcodeSigningId: 'iPhone Developer',
+        updatedWDABundleId: 'com.kazucocoa.WebDriverAgentRunner',
+        wdaLocalPort: 8101 # Change the port
       },
       appium_lib: {
         export_session: true,
@@ -52,7 +55,7 @@ class AppiumLibCoreTest
         wait_interval: 1
       }
     }.freeze
-
+    # /wd/hub/session/63879cf8-3fb4-44f5-bfe5-61cc0a4f8312/timeouts
     # Require a real device or an emulator.
     # We should update platformVersion and deviceName to fit your environment.
     ANDROID_OPS = {
