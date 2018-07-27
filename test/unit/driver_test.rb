@@ -93,6 +93,7 @@ class AppiumLibCoreTest
       assert_equal 'tag name', ::Selenium::WebDriver::Element::FINDERS[:tag_name]
       assert_equal 'xpath', ::Selenium::WebDriver::Element::FINDERS[:xpath]
       assert_equal 'accessibility id', ::Selenium::WebDriver::Element::FINDERS[:accessibility_id]
+      assert_equal '-image', ::Selenium::WebDriver::Element::FINDERS[:image]
     end
   end
 end

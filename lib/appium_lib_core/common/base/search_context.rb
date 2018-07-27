@@ -4,7 +4,12 @@ module Appium
       module SearchContext
         # referenced: ::Selenium::WebDriver::SearchContext
 
-        FINDERS = ::Selenium::WebDriver::SearchContext::FINDERS.merge(accessibility_id: 'accessibility id')
+        FINDERS = ::Selenium::WebDriver::SearchContext::FINDERS.merge(
+          {
+            accessibility_id: 'accessibility id',
+            image: '-image'
+          }
+        )
 
         def self.add_finders(finders)
           FINDERS.merge!(finders)
