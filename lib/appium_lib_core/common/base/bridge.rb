@@ -178,8 +178,12 @@ module Appium
         end
 
         def merged_capabilities(desired_capabilities)
+          puts '------in merged_capabilities------'
+          puts desired_capabilities.inspect
           force_mjsonwp = desired_capabilities[FORCE_MJSONWP]
           desired_capabilities = delete_force_mjsonwp(desired_capabilities) unless force_mjsonwp.nil?
+          puts desired_capabilities.inspect
+          puts '------after delete_force_mjsonwp------'
 
           if force_mjsonwp
             {
