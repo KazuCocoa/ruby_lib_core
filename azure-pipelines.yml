@@ -9,8 +9,7 @@ steps:
   inputs:
     versionSpec: '>= 2.5'
 - script: |
-    gem install bundler
-    bundle install --retry=3 --jobs=4
+    gem install bundler && bundle install --retry=3 --jobs=4
   displayName: 'bundle install'
 - script: bundle exec parallel_test test/unit/ -n 4
   displayName: 'bundle exec parallel_test test/unit/ -n 4'
