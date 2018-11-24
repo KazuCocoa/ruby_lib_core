@@ -12,7 +12,7 @@ steps:
   displayName: 'Install bundler'
 - script: bundle install --retry=3 --jobs=4
   displayName: 'bundle install'
-- script: gem uninstall eventmachine && gem install eventmachine --platform ruby
+- script: gem uninstall --force eventmachine && gem install eventmachine --platform ruby
   displayName: 'bundle re-install eventmachine for Windows'
 - script: bundle exec parallel_test test/unit/ -n 4
   displayName: 'bundle exec parallel_test test/unit/ -n 4'
