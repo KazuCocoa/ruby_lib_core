@@ -8,9 +8,11 @@ steps:
 - task: UseRubyVersion@0
   inputs:
     versionSpec: '>= 2.5'
-- script: gem install bundler && gem install eventmachine --platform ruby
-  displayName: 'Install bundler and eventmachine'
+- script: gem install bundler
+  displayName: 'Install bundler'
 - script: bundle install --retry=3 --jobs=4
   displayName: 'bundle install'
+- script: gem uninstall eventmachine && gem install eventmachine --platform ruby
+  displayName: 'bundle re-install eventmachine for Windows'
 - script: bundle exec parallel_test test/unit/ -n 4
   displayName: 'bundle exec parallel_test test/unit/ -n 4'
