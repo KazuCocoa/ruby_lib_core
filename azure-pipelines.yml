@@ -8,8 +8,8 @@ steps:
 - task: UseRubyVersion@0
   inputs:
     versionSpec: '>= 2.5'
-- script: gem install bundler
-  displayName: 'Install bundler'
+- script: gem install bundler && gem install eventmachine --platform ruby
+  displayName: 'Install bundler and eventmachine'
 - script: bundle install --retry=3 --jobs=4
   displayName: 'bundle install'
 - script: bundle exec parallel_test test/unit/ -n 4
