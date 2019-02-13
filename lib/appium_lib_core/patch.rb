@@ -42,16 +42,16 @@ module Appium
       #   e.value
       #   e.resource_id # call 'e.attribute "resource-id"'
       #
-      def method_missing(method_name, *args, &block)
-        ignore_list = [:to_hash]
-        return if ignore_list.include? method_name
-
-        respond_to?(method_name) ? attribute(method_name.to_s.tr('_', '-')) : super
-      end
-
-      def respond_to_missing?(*)
-        true
-      end
+      # def method_missing(method_name, *args, &block)
+      #   ignore_list = [:to_hash]
+      #   return if ignore_list.include? method_name
+      #
+      #   respond_to?(method_name) ? attribute(method_name.to_s.tr('_', '-')) : super
+      # end
+      #
+      # def respond_to_missing?(*)
+      #   true
+      # end
 
       # Alias for type
       alias type send_keys
