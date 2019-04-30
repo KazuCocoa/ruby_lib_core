@@ -7,6 +7,7 @@ Read `release_notes.md` for commit level details.
 ### Enhancements
 
 ### Bug fixes
+- Fix parameter of `#gsm_signal`. It requires over Appium 1.10.1.
 
 ### Deprecations
 

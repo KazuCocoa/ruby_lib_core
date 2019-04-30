@@ -60,6 +60,7 @@ module Appium
 
           # @!method gsm_signal(signal_strength)
           #     Emulate GSM signal strength change event on the connected emulator.
+          #     Appium 1.10.1+ is required.
           #
           # @param [Hash] signal_strength One of available GSM signal strength. Available action is GSM_SIGNAL.
           #
@@ -131,10 +132,9 @@ module Appium
 
             ::Appium::Core::Device.add_endpoint_method(:gsm_signal) do
               def gsm_signal(signal_strength)
-                raise "#{signal_strength} should be member of #{GSM_SIGNALS} " if GSM_SIGNALS[signal_strength.to_sym].nil?
+                raise "#{signal_strength} should be member of #{GSM_SIGNALS.keys} " if GSM_SIGNALS[signal_strength.to_sym].nil?
 
-                execute(:gsm_signal, {}, { signalStrength: GSM_SIGNALS[signal_strength],
-                                           signalStrengh: GSM_SIGNALS[signal_strength] })
+                execute(:gsm_signal, {}, { signalStrength: GSM_SIGNALS[signal_strength] })
               end
             end
 
