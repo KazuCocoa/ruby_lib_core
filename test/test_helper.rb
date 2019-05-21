@@ -222,7 +222,7 @@ class AppiumLibCoreTest
         },
         appium_lib: {
           export_session: true,
-          wait: 0,
+          wait: 5,
           wait_timeout: 20,
           wait_interval: 1
         }
