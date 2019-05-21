@@ -133,7 +133,7 @@ jobs:
       vmImage: ${{ parameters.vmImage }}
     variables:
       CI: true
-      ANDROID_SDK_VERSION: 28 # Android 9
+      ANDROID_SDK_VERSION: 28
     steps:
     - template: ./functional/android_setup.yml
     - template: ./functional/run_appium.yml
@@ -150,7 +150,7 @@ jobs:
       vmImage: ${{ parameters.vmImage }}
     variables:
       CI: true
-      ANDROID_SDK_VERSION: 27 # Android 8.1
+      ANDROID_SDK_VERSION: 28
     steps:
       - template: ./functional/android_setup.yml
       - template: ./functional/run_appium.yml
