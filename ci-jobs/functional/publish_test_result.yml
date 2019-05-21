@@ -5,6 +5,9 @@ steps:
     testResultsFiles: 'test/reports/TEST-AppiumLibCoreTest*.xml'
     testRunTitle: ${{ parameters.title }}
 - task: ArchiveFiles@2
+  condition: always()
   inputs:
     rootFolderOrFile: 'test/report'
     archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    replaceExistingArchive: true
