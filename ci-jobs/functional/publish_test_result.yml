@@ -4,3 +4,7 @@ steps:
   inputs:
     testResultsFiles: 'test/reports/TEST-AppiumLibCoreTest*.xml'
     testRunTitle: ${{ parameters.title }}
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: 'test/report'
+    archiveType: 'zip'
