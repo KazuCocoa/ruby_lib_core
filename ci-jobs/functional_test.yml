@@ -1,7 +1,6 @@
 # jobs for functional test
 parameters:
   vmImage: 'macOS-10.14'
-  chromeVersion: ''
 
 jobs:
   # Run unit tests on different Node versions
@@ -138,8 +137,6 @@ jobs:
     steps:
     - template: ./functional/android_setup.yml
     - template: ./functional/run_appium.yml
-      parameters:
-        chromeVersion: 2.24
     - script: |
         bundle exec rake test:func:android TEST=test/functional/android/driver_test.rb
       displayName: Run tests
