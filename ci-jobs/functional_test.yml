@@ -128,7 +128,7 @@ jobs:
       parameters:
         xcodeVersion: 'Run_func_test_on_iOS_tv'
 
-  - job: func_test_android
+  - job: func_test_android_base
     pool:
       vmImage: ${{ parameters.vmImage }}
     variables:
@@ -138,8 +138,27 @@ jobs:
     - template: ./functional/android_setup.yml
     - template: ./functional/run_appium.yml
     - script: |
-        bundle exec rake test:func:android TEST=test/functional/android/driver_test.rb
+        bundle exec rake test:func:android TEST=test/functional/android/driver_test.rb;
+        bundle exec rake test:func:android TEST=test/functional/android/patch_test.rb
       displayName: Run tests
     - template: ./functional/publish_test_result.yml
       parameters:
-        xcodeVersion: 'Run_func_test_on_android'
+        xcodeVersion: 'Run_func_test_on_android_base'
+
+  - job: func_test_android_webdriver
+    pool:
+      vmImage: ${{ parameters.vmImage }}
+    variables:
+      CI: true
+      ANDROID_SDK_VERSION: 28
+    steps:
+      - template: ./functional/android_setup.yml
+      - template: ./functional/run_appium.yml
+      - script: |
+          bundle exec rake test:func:android TEST=test/functional/android/webdriver/create_session_test.rb;
+          bundle exec rake test:func:android TEST=test/functional/android/webdriver/device_test.rb;
+          bundle exec rake test:func:android TEST=test/functional/android/webdriver/w3c_actions_test.rb
+        displayName: Run tests
+      - template: ./functional/publish_test_result.yml
+        parameters:
+          xcodeVersion: 'Run_func_test_on_android_base'
