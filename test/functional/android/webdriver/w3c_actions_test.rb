@@ -33,6 +33,7 @@ class AppiumLibCoreTest
       def test_tap_scroll
         skip if @driver.dialect == :oss
 
+        w3c_scroll @driver
         el = @@core.wait { @driver.find_element(:accessibility_id, 'Views') }
         @driver.action.click(el).perform
 
@@ -68,6 +69,7 @@ class AppiumLibCoreTest
       def test_double_tap
         skip if @driver.dialect == :oss
 
+        w3c_scroll @driver
         el = @@core.wait { @driver.find_element(:accessibility_id, 'Views') }
         @driver.action.click(el).perform
 
@@ -108,6 +110,7 @@ class AppiumLibCoreTest
       def test_actions_with_many_down_up
         skip if @driver.dialect == :oss
 
+        w3c_scroll @driver
         el = @@core.wait { @driver.find_element(:accessibility_id, 'Views') }
         @driver.action.click_and_hold(el).release.perform
 
