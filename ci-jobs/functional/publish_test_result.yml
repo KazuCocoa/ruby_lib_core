@@ -11,15 +11,7 @@ steps:
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     replaceExistingArchive: true
-- task: DownloadBuildArtifacts@0
-  condition: always()
+- task: PublishBuildArtifacts@1
   inputs:
-    buildType: 'current'
-    downloadType: 'single'
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)'
     artifactName: 'test reports'
-    downloadPath: '$(System.ArtifactsDirectory)'
-- task: DownloadPipelineArtifact@0
-  condition: always()
-  inputs:
-    buildType: 'current'
-    downloadPath: '$(System.ArtifactsDirectory)'
