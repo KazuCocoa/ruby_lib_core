@@ -16,5 +16,10 @@ steps:
   inputs:
     buildType: 'current'
     downloadType: 'single'
-    artifactName: 'drop'
-    downloadPath: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    artifactName: 'test reports'
+    downloadPath: '$(System.ArtifactsDirectory)'
+- task: DownloadPipelineArtifact@0
+  condition: always()
+  inputs:
+    buildType: 'current'
+    downloadPath: '$(System.ArtifactsDirectory)'
