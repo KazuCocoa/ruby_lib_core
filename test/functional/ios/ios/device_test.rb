@@ -93,7 +93,8 @@ class AppiumLibCoreTest
         e.click
 
         contexts = @@driver.available_contexts
-        assert_equal ['NATIVE_APP'], contexts
+        assert_equal 'NATIVE_APP', contexts.delete('NATIVE_APP')
+        assert contexts.first.start_with?('WEBVIEW')
 
         assert_equal 'NATIVE_APP', @@driver.current_context
 
