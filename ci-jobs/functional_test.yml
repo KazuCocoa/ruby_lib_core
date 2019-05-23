@@ -174,8 +174,6 @@ jobs:
       - template: ./functional/run_appium.yml
       - script: |
           bundle exec rake test:func:android TEST=test/functional/android/android/device_test.rb;
-          bundle exec rake test:func:android TEST=test/functional/android/android/mobile_commands_test.rb;
-          bundle exec rake test:func:android TEST=test/functional/android/android/search_context_test.rb
         displayName: Run tests
       - template: ./functional/publish_test_result.yml
         parameters:
@@ -197,3 +195,20 @@ jobs:
       - template: ./functional/publish_test_result.yml
         parameters:
           xcodeVersion: 'func_test_android_android2'
+
+  - job: func_test_android_android3
+    pool:
+      vmImage: ${{ parameters.vmImage }}
+    variables:
+      CI: true
+      ANDROID_SDK_VERSION: 28
+    steps:
+      - template: ./functional/android_setup.yml
+      - template: ./functional/run_appium.yml
+      - script: |
+          bundle exec rake test:func:android TEST=test/functional/android/android/mobile_commands_test.rb;
+          bundle exec rake test:func:android TEST=test/functional/android/android/search_context_test.rb
+        displayName: Run tests
+      - template: ./functional/publish_test_result.yml
+        parameters:
+          xcodeVersion: 'func_test_android_android3'

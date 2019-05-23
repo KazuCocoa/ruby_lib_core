@@ -92,8 +92,11 @@ class AppiumLibCoreTest
         e = @@core.wait { @@driver.find_element :accessibility_id, 'Web' }
         e.click
 
-        contexts = @@driver.available_contexts
-        webview_context = contexts.detect { |e| e.start_with?('WEBVIEW') }
+        webview_context = @@core.wait do
+          c = @@driver.available_contexts.detect { |e| e.start_with?('WEBVIEW') }
+          assert c
+          c
+        end
 
         @@driver.set_context webview_context
         @@core.wait { assert @@driver.current_context.start_with? 'WEBVIEW' }
