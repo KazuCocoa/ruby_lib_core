@@ -7,7 +7,7 @@ steps:
   displayName: Install appium beta
 - script: npm install -g mjpeg-consumer
   displayName: Install MJPEG Consumer
-- script: npm install --chromedriver_version="2.24"
+- script: npm install --chromedriver_version="2.44"
   displayName: Install Node dependencies
 - task: UseRubyVersion@0
   inputs:
