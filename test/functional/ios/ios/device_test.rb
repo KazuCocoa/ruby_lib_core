@@ -95,7 +95,7 @@ class AppiumLibCoreTest
         contexts = @@driver.available_contexts
         webview_context = contexts.detect { |e| e.start_with?('WEBVIEW') }
 
-        @driver.set_context webview_context
+        @@driver.set_context webview_context
         @@core.wait { assert @driver.current_context.start_with? 'WEBVIEW' }
 
         @@driver.switch_to_default_context
