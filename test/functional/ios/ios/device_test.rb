@@ -93,9 +93,9 @@ class AppiumLibCoreTest
         e.click
 
         webview_context = @@core.wait do
-          c = @@driver.available_contexts.detect { |e| e.start_with?('WEBVIEW') }
-          assert c
-          c
+          context = @@driver.available_contexts.detect { |c| c.start_with?('WEBVIEW') }
+          assert context
+          context
         end
 
         @@driver.set_context webview_context
