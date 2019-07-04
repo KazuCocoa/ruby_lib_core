@@ -1047,7 +1047,7 @@ module Appium
           find_elements :image, template
         end
 
-        # @since Appium 1.14.0
+        # @since Appium 1.15.0
         #
         # Run a set of script against the current session, allowing execution of many commands in one Appium request.
         # Supports {https://webdriver.io/docs/api.html WebdriverIO} API so far.

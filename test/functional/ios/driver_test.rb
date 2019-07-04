@@ -70,7 +70,7 @@ class AppiumLibCoreTest
       @@driver.back
     end
 
-    # @since Appium 1.14.0
+    # @since Appium 1.15.0
     def test_default_keyboard_pref
       bundle_id = @@driver.session_capabilities['CFBundleIdentifier']
       begin
@@ -87,7 +87,7 @@ class AppiumLibCoreTest
       assert_equal '0', switches_status['Predictive']
     end
 
-    # @since Appium 1.14.0
+    # @since Appium 1.15.0
     def test_batch
       script = <<-SCRIPT
 const status = await driver.status();
@@ -100,7 +100,7 @@ return [status];
       assert('warning message', r.logs['warn'].first)
     end
 
-    # @since Appium 1.14.0
+    # @since Appium 1.15.0
     def test_batch_only_return
       script = <<-SCRIPT
       SCRIPT
@@ -110,7 +110,7 @@ return [status];
       assert([], r.logs['warn'])
     end
 
-    # @since Appium 1.14.0
+    # @since Appium 1.15.0
     def test_batch_combination_ruby_script
       script = <<-SCRIPT
 console.warn('warning message');
