@@ -3,7 +3,7 @@ steps:
   inputs:
     versionSpec: 10.x
   displayName: Install Node 10.x
-- script: npm install -g appium@beta --chromedriver_version='2.44'
+- script: npm install -g appium@1.11.1 --chromedriver_version='2.44'
   displayName: Install appium@1.11.1
 - script: npm install -g mjpeg-consumer
   displayName: Install MJPEG Consumer
