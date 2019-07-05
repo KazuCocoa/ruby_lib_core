@@ -1,6 +1,6 @@
 # jobs for functional test
 parameters:
-  vmImage: 'macOS-10.14'
+  vmImage: 'macOS-10.13'
 
 jobs:
   # Run unit tests on different Node versions
@@ -12,7 +12,7 @@ jobs:
     steps:
     - template: ./functional/ios_setup.yml
       parameters:
-        xcodeVersion: 10.1
+        xcodeVersion: 9.4
     - template: ./functional/run_appium.yml
     - script: bundle exec rake test:func:ios TESTS=test/functional/ios/driver_test.rb,test/functional/ios/patch_test.rb
       displayName: Run tests
@@ -28,7 +28,7 @@ jobs:
     steps:
     - template: ./functional/ios_setup.yml
       parameters:
-        xcodeVersion: 10.1
+        xcodeVersion: 9.4
     - template: ./functional/run_appium.yml
     - script: bundle exec rake test:func:ios TESTS=test/functional/ios/webdriver/create_session_test.rb,test/functional/ios/webdriver/w3c_actions_test.rb
       displayName: Run tests
@@ -44,7 +44,7 @@ jobs:
     steps:
     - template: ./functional/ios_setup.yml
       parameters:
-        xcodeVersion: 10.1
+        xcodeVersion: 9.4
     - template: ./functional/run_appium.yml
     - script: bundle exec rake test:func:ios TESTS=test/functional/ios/webdriver/device_test.rb
       displayName: Run tests
@@ -60,7 +60,7 @@ jobs:
     steps:
     - template: ./functional/ios_setup.yml
       parameters:
-        xcodeVersion: 10.1
+        xcodeVersion: 9.4
     - template: ./functional/run_appium.yml
     - script: bundle exec rake test:func:ios TESTS=test/functional/ios/ios/device_test.rb
       displayName: Run tests
@@ -76,7 +76,7 @@ jobs:
     steps:
     - template: ./functional/ios_setup.yml
       parameters:
-        xcodeVersion: 10.1
+        xcodeVersion: 9.4
     - template: ./functional/run_appium.yml
     - script: bundle exec rake test:func:ios TESTS=test/functional/ios/ios/device_wda_attachment_test.rb,test/functional/ios/ios/image_comparison_test.rb
       displayName: Run tests
@@ -92,7 +92,7 @@ jobs:
     steps:
     - template: ./functional/ios_setup.yml
       parameters:
-        xcodeVersion: 10.1
+        xcodeVersion: 9.4
     - script: brew install ffmpeg && brew tap wix/brew && brew install wix/brew/applesimutils
       displayName: Install ffmpeg and applesimutils
     - template: ./functional/run_appium.yml
@@ -123,7 +123,7 @@ jobs:
       vmImage: ${{ parameters.vmImage }}
     variables:
       CI: true
-      ANDROID_SDK_VERSION: 28
+      ANDROID_SDK_VERSION: 25
     steps:
     - template: ./functional/android_setup.yml
     - template: ./functional/run_appium.yml
@@ -138,7 +138,7 @@ jobs:
       vmImage: ${{ parameters.vmImage }}
     variables:
       CI: true
-      ANDROID_SDK_VERSION: 28
+      ANDROID_SDK_VERSION: 25
     steps:
       - template: ./functional/android_setup.yml
       - template: ./functional/run_appium.yml
@@ -153,7 +153,7 @@ jobs:
       vmImage: ${{ parameters.vmImage }}
     variables:
       CI: true
-      ANDROID_SDK_VERSION: 28
+      ANDROID_SDK_VERSION: 25
     steps:
       - template: ./functional/android_setup.yml
       - template: ./functional/run_appium.yml
@@ -168,7 +168,7 @@ jobs:
       vmImage: ${{ parameters.vmImage }}
     variables:
       CI: true
-      ANDROID_SDK_VERSION: 28
+      ANDROID_SDK_VERSION: 25
     steps:
       - template: ./functional/android_setup.yml
       - template: ./functional/run_appium.yml
@@ -183,7 +183,7 @@ jobs:
       vmImage: ${{ parameters.vmImage }}
     variables:
       CI: true
-      ANDROID_SDK_VERSION: 28
+      ANDROID_SDK_VERSION: 25
     steps:
       - template: ./functional/android_setup.yml
       - template: ./functional/run_appium.yml
@@ -198,7 +198,7 @@ jobs:
       vmImage: ${{ parameters.vmImage }}
     variables:
       CI: true
-      ANDROID_SDK_VERSION: 28
+      ANDROID_SDK_VERSION: 25
     steps:
       - template: ./functional/android_setup.yml
       - template: ./functional/run_appium.yml
@@ -213,7 +213,7 @@ jobs:
       vmImage: ${{ parameters.vmImage }}
     variables:
       CI: true
-      ANDROID_SDK_VERSION: 28
+      ANDROID_SDK_VERSION: 25
       AUTOMATION_NAME_DROID: espresso
     steps:
       - template: ./functional/android_setup.yml
