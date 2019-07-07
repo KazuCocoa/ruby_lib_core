@@ -73,7 +73,7 @@ class AppiumLibCoreTest
 
     # @since Appium 1.15.0
     def test_default_keyboard_pref
-      skip 'It requires Appium 1.15.0' unless AppiumLibCoreTest.required_appium_version?(@@core, '1.15.0')
+      AppiumLibCoreTest.skip_test @@driver, '1.15.0'
 
       bundle_id = @@driver.session_capabilities['CFBundleIdentifier']
       begin
@@ -92,7 +92,7 @@ class AppiumLibCoreTest
 
     # @since Appium 1.15.0
     def test_batch
-      skip 'It requires Appium 1.15.0' unless AppiumLibCoreTest.required_appium_version?(@@core, '1.15.0')
+      AppiumLibCoreTest.skip_test @@driver, '1.15.0'
 
       script = <<-SCRIPT
 const status = await driver.status();
@@ -107,7 +107,7 @@ return [status];
 
     # @since Appium 1.15.0
     def test_batch_only_return
-      skip 'It requires Appium 1.15.0' unless AppiumLibCoreTest.required_appium_version?(@@core, '1.15.0')
+      AppiumLibCoreTest.skip_test @@driver, '1.15.0'
 
       script = <<-SCRIPT
       SCRIPT
@@ -119,7 +119,7 @@ return [status];
 
     # @since Appium 1.15.0
     def test_batch_combination_ruby_script
-      skip 'It requires Appium 1.15.0' unless AppiumLibCoreTest.required_appium_version?(@@core, '1.15.0')
+      AppiumLibCoreTest.skip_test @@driver, '1.15.0'
 
       script = <<-SCRIPT
 console.warn('warning message');
