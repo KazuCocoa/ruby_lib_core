@@ -72,11 +72,11 @@ class AppiumLibCoreTest
       # @since Appium 1.10.0
       def test_toast
         skip unless @core.automation_name == :espresso
-        skip 'It requires Appium 1.10.0' unless AppiumLibCoreTest.required_appium_version?(@core, '1.10.0')
 
         caps = Caps.android 'io.appium.android.apis.view.SecureView'
         @core = ::Appium::Core.for(caps)
         @driver = @core.start_driver
+        skip 'It requires Appium 1.10.0' unless AppiumLibCoreTest.required_appium_version?(@core, '1.10.0')
 
         @driver.find_element(:id, 'io.appium.android.apis:id/secure_view_toast_button').click
 
@@ -89,9 +89,9 @@ class AppiumLibCoreTest
       # @since Appium 1.11.0
       def test_drawer
         skip unless @core.automation_name == :espresso
-        skip 'It requires Appium 1.11.0' unless AppiumLibCoreTest.required_appium_version?(@core, '1.11.0')
 
         @driver = @core.start_driver
+        skip 'It requires Appium 1.11.0' unless AppiumLibCoreTest.required_appium_version?(@core, '1.11.0')
 
         el = @driver.find_element(:accessibility_id, 'Views')
 
@@ -104,11 +104,11 @@ class AppiumLibCoreTest
       # @since Appium 1.11.0 (Newer than 1.10.0)
       def test_datepicker
         skip unless @core.automation_name == :espresso
-        skip 'It requires Appium 1.11.0' unless AppiumLibCoreTest.required_appium_version?(@core, '1.11.0')
 
         caps = Caps.android 'io.appium.android.apis.view.DateWidgets1'
         @core = ::Appium::Core.for(caps)
         @driver = @core.start_driver
+        skip 'It requires Appium 1.11.0' unless AppiumLibCoreTest.required_appium_version?(@core, '1.11.0')
 
         @driver.find_element(:accessibility_id, 'change the date').click
 
@@ -120,11 +120,11 @@ class AppiumLibCoreTest
       # @since Appium 1.11.0 (Newer than 1.10.0)
       def test_timepicker
         skip unless @core.automation_name == :espresso
-        skip 'It requires Appium 1.11.0' unless AppiumLibCoreTest.required_appium_version?(@core, '1.11.0')
 
         caps = Caps.android 'io.appium.android.apis.view.DateWidgets2'
         @core = ::Appium::Core.for(caps)
         @driver = @core.start_driver
+        skip 'It requires Appium 1.11.0' unless AppiumLibCoreTest.required_appium_version?(@core, '1.11.0')
 
         time_el = @driver.find_element(:class, 'android.widget.TimePicker')
         @driver.execute_script('mobile: setTime', { hours: 11, minutes: 0, element: time_el.ref })
@@ -138,9 +138,9 @@ class AppiumLibCoreTest
       # @since Appium 1.11.0 (Newer than 1.10.0)
       def test_navigate_to
         skip unless @core.automation_name == :espresso
-        skip 'It requires Appium 1.11.0' unless AppiumLibCoreTest.required_appium_version?(@core, '1.11.0')
 
         @driver = @core.start_driver
+        skip 'It requires Appium 1.11.0' unless AppiumLibCoreTest.required_appium_version?(@core, '1.11.0')
 
         el = @driver.find_element(:accessibility_id, 'Views')
 
@@ -157,9 +157,9 @@ class AppiumLibCoreTest
       # It can work with `ViewPager` https://developer.android.com/reference/android/support/v4/view/ViewPager
       def test_scroll_page_on_view_pager
         skip unless @core.automation_name == :espresso
-        skip 'It requires Appium 1.11.0' unless AppiumLibCoreTest.required_appium_version?(@core, '1.11.0')
 
         @driver = @core.start_driver
+        skip 'It requires Appium 1.11.0' unless AppiumLibCoreTest.required_appium_version?(@core, '1.11.0')
 
         el = @driver.find_element(:accessibility_id, 'Views')
 
@@ -248,6 +248,7 @@ class AppiumLibCoreTest
       end
 
       def test_device_info
+        @driver = @core.start_driver
         assert(@driver.execute_script('mobile: deviceInfo', {}).size > 0)
       end
 
