@@ -58,6 +58,8 @@ class AppiumLibCoreTest
     end
 
     def test_click_back
+      skip_as_appium_version @@driver, '1.8.0' # 1.7.2- have a bit different behaviour
+
       e = @@driver.find_element :accessibility_id, 'Alerts'
       e.click
       sleep 1 # wait for animation
