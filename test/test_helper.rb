@@ -45,23 +45,23 @@ class AppiumLibCoreTest
         File.write "#{base_path}/#{name}-failed.xml", driver.page_source
         driver.save_screenshot "#{base_path}/#{name}-failed.png"
       end
+
+      def skip_as_appium_version(driver, required_version)
+        return true if ENV['IGNORE_VERSION_SKIP']
+
+        version = driver.remote_status
+
+        return false if version.empty?
+
+        if Gem::Version.new(version['build']['version']) < Gem::Version.new(required_version.to_s)
+          skip "Appium #{required_version} is required"
+        end
+      end
     end
   end
 end
 
 class AppiumLibCoreTest
-  def self.skip_test(driver, required_version)
-    return true if ENV['IGNORE_VERSION_SKIP']
-
-    version = driver.remote_status
-
-    return false if version.empty?
-
-    if Gem::Version.new(version['build']['version']) < Gem::Version.new(required_version.to_s)
-      skip "Appium #{required_version} is required"
-    end
-  end
-
   def self.path_of(path)
     path_dup = path.dup
     path_dup = path_dup.tr('/', '\\') if ::Appium::Core::Base.platform.windows?

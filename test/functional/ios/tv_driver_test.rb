@@ -29,7 +29,7 @@ class AppiumLibCoreTest
 
     def test_launch_app
       skip 'Only tvOS platform' unless @core.caps[:platformName] == :tvos
-      AppiumLibCoreTest.skip_test @driver, '1.13.0'
+      skip_as_appium_version @driver, '1.13.0'
 
       test_package = 'com.kazucocoa.tv-example'
 
