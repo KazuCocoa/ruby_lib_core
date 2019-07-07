@@ -46,6 +46,7 @@ class AppiumLibCoreTest
 
       def test_pasteboard
         @driver = @core.start_driver
+        skip_as_appium_version @driver, '1.9.0'
 
         message = 'happy appium'
 
