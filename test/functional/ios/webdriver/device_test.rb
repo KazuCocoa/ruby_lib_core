@@ -152,7 +152,7 @@ class AppiumLibCoreTest
 
       # @since Appium 1.10.0
       def test_screenshot_quality
-        AppiumLibCoreTest.skip_test @@driver, '1.10.0'
+        skip_as_appium_version @@driver, '1.10.0'
 
         lower_image_path = 'lower.png'
         lower_again_image_path = 'lower_again.png'
