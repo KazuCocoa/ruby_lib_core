@@ -29,7 +29,7 @@ class AppiumLibCoreTest
       # @since Appium 1.12.0
       def test_permissions
         @driver = @core.start_driver
-        skip 'It requires Appium 1.12.0' unless AppiumLibCoreTest.required_appium_version?(@core, '1.12.0')
+        AppiumLibCoreTest.skip_test @driver, '1.12.0'
 
         package = 'io.appium.android.apis'
         type = {
@@ -76,7 +76,7 @@ class AppiumLibCoreTest
         caps = Caps.android 'io.appium.android.apis.view.SecureView'
         @core = ::Appium::Core.for(caps)
         @driver = @core.start_driver
-        skip 'It requires Appium 1.10.0' unless AppiumLibCoreTest.required_appium_version?(@core, '1.10.0')
+        AppiumLibCoreTest.skip_test @driver, '1.10.0'
 
         @driver.find_element(:id, 'io.appium.android.apis:id/secure_view_toast_button').click
 
@@ -91,7 +91,7 @@ class AppiumLibCoreTest
         skip unless @core.automation_name == :espresso
 
         @driver = @core.start_driver
-        skip 'It requires Appium 1.11.0' unless AppiumLibCoreTest.required_appium_version?(@core, '1.11.0')
+        AppiumLibCoreTest.skip_test @driver, '1.11.0'
 
         el = @driver.find_element(:accessibility_id, 'Views')
 
@@ -108,7 +108,7 @@ class AppiumLibCoreTest
         caps = Caps.android 'io.appium.android.apis.view.DateWidgets1'
         @core = ::Appium::Core.for(caps)
         @driver = @core.start_driver
-        skip 'It requires Appium 1.11.0' unless AppiumLibCoreTest.required_appium_version?(@core, '1.11.0')
+        AppiumLibCoreTest.skip_test @driver, '1.11.0'
 
         @driver.find_element(:accessibility_id, 'change the date').click
 
@@ -124,7 +124,7 @@ class AppiumLibCoreTest
         caps = Caps.android 'io.appium.android.apis.view.DateWidgets2'
         @core = ::Appium::Core.for(caps)
         @driver = @core.start_driver
-        skip 'It requires Appium 1.11.0' unless AppiumLibCoreTest.required_appium_version?(@core, '1.11.0')
+        AppiumLibCoreTest.skip_test @driver, '1.11.0'
 
         time_el = @driver.find_element(:class, 'android.widget.TimePicker')
         @driver.execute_script('mobile: setTime', { hours: 11, minutes: 0, element: time_el.ref })
@@ -140,7 +140,7 @@ class AppiumLibCoreTest
         skip unless @core.automation_name == :espresso
 
         @driver = @core.start_driver
-        skip 'It requires Appium 1.11.0' unless AppiumLibCoreTest.required_appium_version?(@core, '1.11.0')
+        AppiumLibCoreTest.skip_test @driver, '1.11.0'
 
         el = @driver.find_element(:accessibility_id, 'Views')
 
@@ -159,7 +159,7 @@ class AppiumLibCoreTest
         skip unless @core.automation_name == :espresso
 
         @driver = @core.start_driver
-        skip 'It requires Appium 1.11.0' unless AppiumLibCoreTest.required_appium_version?(@core, '1.11.0')
+        AppiumLibCoreTest.skip_test @driver, '1.11.0'
 
         el = @driver.find_element(:accessibility_id, 'Views')
 
@@ -183,11 +183,11 @@ class AppiumLibCoreTest
       # https://github.com/appium/appium-espresso-driver/blob/0e03d2ca63dd0e77277aa3c493d239456bc2a899/lib/commands/general.js#L135-L174
       def test_backdoor
         skip unless @core.automation_name == :espresso
-        skip 'It requires Appium 1.11.0' unless AppiumLibCoreTest.required_appium_version?(@core, '1.11.0')
 
         caps = Caps.android 'io.appium.android.apis.view.TextSwitcher1'
         @core = ::Appium::Core.for(caps)
         @driver = @core.start_driver
+        AppiumLibCoreTest.skip_test @driver, '1.11.0'
 
         assert_mobile_command_error 'mobile: backdoor', { target: :activity, methods: [{ name: 'noMethod', args: [] }] },
                                     'No public method noMethod definded on class io.appium.android.apis.view.TextSwitcher1'
@@ -203,11 +203,11 @@ class AppiumLibCoreTest
       # @since Appium 1.12.0 (Espresso driver 1.8.0~)
       def test_webatom
         skip unless @core.automation_name == :espresso
-        skip 'It requires Appium 1.12.0' unless AppiumLibCoreTest.required_appium_version?(@core, '1.12.0')
 
         caps = Caps.android 'io.appium.android.apis.view.WebView1'
         @core = ::Appium::Core.for(caps)
         @driver = @core.start_driver
+        AppiumLibCoreTest.skip_test @driver, '1.12.0'
 
         el = @driver.find_element :id, 'wv1'
 
