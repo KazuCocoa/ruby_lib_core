@@ -50,14 +50,16 @@ class AppiumLibCoreTest
 end
 
 class AppiumLibCoreTest
-  def self.required_appium_version?(core_driver, required)
+  def self.skip_test(driver, required_version)
     return true if ENV['IGNORE_VERSION_SKIP']
 
-    version = core_driver.appium_server_version
+    version = driver.remote_status
 
     return false if version.empty?
 
-    Gem::Version.new(version['build']['version']) >= Gem::Version.new(required.to_s)
+    if Gem::Version.new(version['build']['version']) < Gem::Version.new(required_version.to_s)
+      skip "Appium #{required_version} is required"
+    end
   end
 
   def self.path_of(path)
