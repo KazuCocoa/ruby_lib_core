@@ -70,6 +70,8 @@ class AppiumLibCoreTest
       end
 
       def test_location
+        @driver.location # Should we call the location once?
+
         latitude = 100
         longitude = 100
         altitude = 75
