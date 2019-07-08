@@ -2,7 +2,7 @@
 parameters:
   vmImage: 'macOS-10.14'
   appiumVersion: '1.14.0'
-  ignoreVersionSkip: true
+  ignoreVersionSkip: false
   CI: true
 
 jobs:
