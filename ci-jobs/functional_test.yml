@@ -1,6 +1,9 @@
 # jobs for functional test
 parameters:
   vmImage: 'macOS-10.13'
+  appiumVersion: 'beta'
+  ignoreVersionSkip: false
+  CI: true
 
 jobs:
   # Run unit tests on different Node versions
@@ -8,7 +11,9 @@ jobs:
     pool:
       vmImage: ${{ parameters.vmImage }}
     variables:
-      CI: true
+      CI: ${{ parameters.ci }}
+      IGNORE_VERSION_SKIP: ${{ parameters.ignoreVersionSkip }}
+      APPIUM_VERSION: ${{ parameters.appiumVersion }}
     steps:
     - template: ./functional/ios_setup.yml
       parameters:
@@ -24,7 +29,9 @@ jobs:
     pool:
       vmImage: ${{ parameters.vmImage }}
     variables:
-      CI: true
+      CI: ${{ parameters.ci }}
+      IGNORE_VERSION_SKIP: ${{ parameters.ignoreVersionSkip }}
+      APPIUM_VERSION: ${{ parameters.appiumVersion }}
     steps:
     - template: ./functional/ios_setup.yml
       parameters:
@@ -40,7 +47,9 @@ jobs:
     pool:
       vmImage: ${{ parameters.vmImage }}
     variables:
-      CI: true
+      CI: ${{ parameters.ci }}
+      IGNORE_VERSION_SKIP: ${{ parameters.ignoreVersionSkip }}
+      APPIUM_VERSION: ${{ parameters.appiumVersion }}
     steps:
     - template: ./functional/ios_setup.yml
       parameters:
@@ -56,7 +65,9 @@ jobs:
     pool:
       vmImage: ${{ parameters.vmImage }}
     variables:
-      CI: true
+      CI: ${{ parameters.ci }}
+      IGNORE_VERSION_SKIP: ${{ parameters.ignoreVersionSkip }}
+      APPIUM_VERSION: ${{ parameters.appiumVersion }}
     steps:
     - template: ./functional/ios_setup.yml
       parameters:
@@ -72,7 +83,9 @@ jobs:
     pool:
       vmImage: ${{ parameters.vmImage }}
     variables:
-      CI: true
+      CI: ${{ parameters.ci }}
+      IGNORE_VERSION_SKIP: ${{ parameters.ignoreVersionSkip }}
+      APPIUM_VERSION: ${{ parameters.appiumVersion }}
     steps:
     - template: ./functional/ios_setup.yml
       parameters:
@@ -88,7 +101,9 @@ jobs:
     pool:
       vmImage: ${{ parameters.vmImage }}
     variables:
-      CI: true
+      CI: ${{ parameters.ci }}
+      IGNORE_VERSION_SKIP: ${{ parameters.ignoreVersionSkip }}
+      APPIUM_VERSION: ${{ parameters.appiumVersion }}
     steps:
     - template: ./functional/ios_setup.yml
       parameters:
@@ -106,7 +121,9 @@ jobs:
     pool:
       vmImage: ${{ parameters.vmImage }}
     variables:
-      CI: true
+      CI: ${{ parameters.ci }}
+      IGNORE_VERSION_SKIP: ${{ parameters.ignoreVersionSkip }}
+      APPIUM_VERSION: ${{ parameters.appiumVersion }}
     steps:
     - template: ./functional/ios_setup.yml
       parameters:
@@ -122,8 +139,15 @@ jobs:
     pool:
       vmImage: ${{ parameters.vmImage }}
     variables:
+<<<<<<< HEAD
       CI: true
       ANDROID_SDK_VERSION: 25
+=======
+      CI: ${{ parameters.ci }}
+      ANDROID_SDK_VERSION: 28
+      IGNORE_VERSION_SKIP: ${{ parameters.ignoreVersionSkip }}
+      APPIUM_VERSION: ${{ parameters.appiumVersion }}
+>>>>>>> tmp
     steps:
     - template: ./functional/android_setup.yml
     - template: ./functional/run_appium.yml
@@ -137,8 +161,15 @@ jobs:
     pool:
       vmImage: ${{ parameters.vmImage }}
     variables:
+<<<<<<< HEAD
       CI: true
       ANDROID_SDK_VERSION: 25
+=======
+      CI: ${{ parameters.ci }}
+      ANDROID_SDK_VERSION: 28
+      IGNORE_VERSION_SKIP: ${{ parameters.ignoreVersionSkip }}
+      APPIUM_VERSION: ${{ parameters.appiumVersion }}
+>>>>>>> tmp
     steps:
       - template: ./functional/android_setup.yml
       - template: ./functional/run_appium.yml
@@ -152,8 +183,15 @@ jobs:
     pool:
       vmImage: ${{ parameters.vmImage }}
     variables:
+<<<<<<< HEAD
       CI: true
       ANDROID_SDK_VERSION: 25
+=======
+      CI: ${{ parameters.ci }}
+      ANDROID_SDK_VERSION: 28
+      IGNORE_VERSION_SKIP: ${{ parameters.ignoreVersionSkip }}
+      APPIUM_VERSION: ${{ parameters.appiumVersion }}
+>>>>>>> tmp
     steps:
       - template: ./functional/android_setup.yml
       - template: ./functional/run_appium.yml
@@ -167,8 +205,15 @@ jobs:
     pool:
       vmImage: ${{ parameters.vmImage }}
     variables:
+<<<<<<< HEAD
       CI: true
       ANDROID_SDK_VERSION: 25
+=======
+      CI: ${{ parameters.ci }}
+      ANDROID_SDK_VERSION: 28
+      IGNORE_VERSION_SKIP: ${{ parameters.ignoreVersionSkip }}
+      APPIUM_VERSION: ${{ parameters.appiumVersion }}
+>>>>>>> tmp
     steps:
       - template: ./functional/android_setup.yml
       - template: ./functional/run_appium.yml
@@ -182,8 +227,15 @@ jobs:
     pool:
       vmImage: ${{ parameters.vmImage }}
     variables:
+<<<<<<< HEAD
       CI: true
       ANDROID_SDK_VERSION: 25
+=======
+      CI: ${{ parameters.ci }}
+      ANDROID_SDK_VERSION: 28
+      IGNORE_VERSION_SKIP: ${{ parameters.ignoreVersionSkip }}
+      APPIUM_VERSION: ${{ parameters.appiumVersion }}
+>>>>>>> tmp
     steps:
       - template: ./functional/android_setup.yml
       - template: ./functional/run_appium.yml
@@ -197,8 +249,15 @@ jobs:
     pool:
       vmImage: ${{ parameters.vmImage }}
     variables:
+<<<<<<< HEAD
       CI: true
       ANDROID_SDK_VERSION: 25
+=======
+      CI: ${{ parameters.ci }}
+      ANDROID_SDK_VERSION: 28
+      IGNORE_VERSION_SKIP: ${{ parameters.ignoreVersionSkip }}
+      APPIUM_VERSION: ${{ parameters.appiumVersion }}
+>>>>>>> tmp
     steps:
       - template: ./functional/android_setup.yml
       - template: ./functional/run_appium.yml
@@ -212,9 +271,16 @@ jobs:
     pool:
       vmImage: ${{ parameters.vmImage }}
     variables:
+<<<<<<< HEAD
       CI: true
       ANDROID_SDK_VERSION: 25
+=======
+      CI: ${{ parameters.ci }}
+      ANDROID_SDK_VERSION: 28
+>>>>>>> tmp
       AUTOMATION_NAME_DROID: espresso
+      IGNORE_VERSION_SKIP: ${{ parameters.ignoreVersionSkip }}
+      APPIUM_VERSION: ${{ parameters.appiumVersion }}
     steps:
       - template: ./functional/android_setup.yml
       - template: ./functional/run_appium.yml
