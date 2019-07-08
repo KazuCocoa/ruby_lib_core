@@ -1,7 +1,7 @@
 # jobs for functional test
 parameters:
   vmImage: 'macOS-10.14'
-  appiumVersion: 'beta'
+  appiumVersion: '1.14.0'
   ignoreVersionSkip: true
   CI: true
 
