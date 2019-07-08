@@ -77,10 +77,12 @@ class AppiumLibCoreTest
         altitude = 75
         @driver.set_location(latitude, longitude, altitude)
 
-        loc = @@core.wait { @driver.location } # check the location
-        assert_equal 100, loc.latitude
-        assert_equal 100, loc.longitude
-        assert_equal 75, loc.altitude
+        @@core.wait do
+          loc = @driver.location
+          assert_equal 100, loc.latitude
+          assert_equal 100, loc.longitude
+          assert_equal 75, loc.altitude
+        end
       end
 
       def test_accept_alert
