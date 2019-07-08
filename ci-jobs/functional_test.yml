@@ -139,15 +139,10 @@ jobs:
     pool:
       vmImage: ${{ parameters.vmImage }}
     variables:
-<<<<<<< HEAD
-      CI: true
-      ANDROID_SDK_VERSION: 25
-=======
       CI: ${{ parameters.ci }}
-      ANDROID_SDK_VERSION: 28
+      ANDROID_SDK_VERSION: 25
       IGNORE_VERSION_SKIP: ${{ parameters.ignoreVersionSkip }}
       APPIUM_VERSION: ${{ parameters.appiumVersion }}
->>>>>>> tmp
     steps:
     - template: ./functional/android_setup.yml
     - template: ./functional/run_appium.yml
@@ -160,16 +155,10 @@ jobs:
   - job: func_test_android_webdriver
     pool:
       vmImage: ${{ parameters.vmImage }}
-    variables:
-<<<<<<< HEAD
-      CI: true
-      ANDROID_SDK_VERSION: 25
-=======
       CI: ${{ parameters.ci }}
-      ANDROID_SDK_VERSION: 28
+      ANDROID_SDK_VERSION: 25
       IGNORE_VERSION_SKIP: ${{ parameters.ignoreVersionSkip }}
       APPIUM_VERSION: ${{ parameters.appiumVersion }}
->>>>>>> tmp
     steps:
       - template: ./functional/android_setup.yml
       - template: ./functional/run_appium.yml
@@ -183,15 +172,10 @@ jobs:
     pool:
       vmImage: ${{ parameters.vmImage }}
     variables:
-<<<<<<< HEAD
-      CI: true
-      ANDROID_SDK_VERSION: 25
-=======
       CI: ${{ parameters.ci }}
-      ANDROID_SDK_VERSION: 28
+      ANDROID_SDK_VERSION: 25
       IGNORE_VERSION_SKIP: ${{ parameters.ignoreVersionSkip }}
       APPIUM_VERSION: ${{ parameters.appiumVersion }}
->>>>>>> tmp
     steps:
       - template: ./functional/android_setup.yml
       - template: ./functional/run_appium.yml
@@ -205,15 +189,10 @@ jobs:
     pool:
       vmImage: ${{ parameters.vmImage }}
     variables:
-<<<<<<< HEAD
-      CI: true
-      ANDROID_SDK_VERSION: 25
-=======
       CI: ${{ parameters.ci }}
-      ANDROID_SDK_VERSION: 28
+      ANDROID_SDK_VERSION: 25
       IGNORE_VERSION_SKIP: ${{ parameters.ignoreVersionSkip }}
       APPIUM_VERSION: ${{ parameters.appiumVersion }}
->>>>>>> tmp
     steps:
       - template: ./functional/android_setup.yml
       - template: ./functional/run_appium.yml
@@ -227,15 +206,10 @@ jobs:
     pool:
       vmImage: ${{ parameters.vmImage }}
     variables:
-<<<<<<< HEAD
-      CI: true
-      ANDROID_SDK_VERSION: 25
-=======
       CI: ${{ parameters.ci }}
-      ANDROID_SDK_VERSION: 28
+      ANDROID_SDK_VERSION: 25
       IGNORE_VERSION_SKIP: ${{ parameters.ignoreVersionSkip }}
       APPIUM_VERSION: ${{ parameters.appiumVersion }}
->>>>>>> tmp
     steps:
       - template: ./functional/android_setup.yml
       - template: ./functional/run_appium.yml
@@ -249,15 +223,10 @@ jobs:
     pool:
       vmImage: ${{ parameters.vmImage }}
     variables:
-<<<<<<< HEAD
-      CI: true
-      ANDROID_SDK_VERSION: 25
-=======
       CI: ${{ parameters.ci }}
-      ANDROID_SDK_VERSION: 28
+      ANDROID_SDK_VERSION: 25
       IGNORE_VERSION_SKIP: ${{ parameters.ignoreVersionSkip }}
       APPIUM_VERSION: ${{ parameters.appiumVersion }}
->>>>>>> tmp
     steps:
       - template: ./functional/android_setup.yml
       - template: ./functional/run_appium.yml
@@ -271,13 +240,8 @@ jobs:
     pool:
       vmImage: ${{ parameters.vmImage }}
     variables:
-<<<<<<< HEAD
-      CI: true
-      ANDROID_SDK_VERSION: 25
-=======
       CI: ${{ parameters.ci }}
-      ANDROID_SDK_VERSION: 28
->>>>>>> tmp
+      ANDROID_SDK_VERSION: 25
       AUTOMATION_NAME_DROID: espresso
       IGNORE_VERSION_SKIP: ${{ parameters.ignoreVersionSkip }}
       APPIUM_VERSION: ${{ parameters.appiumVersion }}
