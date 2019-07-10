@@ -5,8 +5,6 @@ steps:
   displayName: List Installed Simulators
 - script: rm -rf ~/Library/Caches/com.apple.dt.Xcode/
   displayName: rm -rf ~/Library/Caches/com.apple.dt.Xcode/
-- script: xcodebuild -alltargets clean
-  displayName: xcodebuild -alltargets clean
 - script: rm -rf ~/Library/Developer/Xcode/DerivedData/
   displayName: rm -rf ~/Library/Developer/Xcode/DerivedData/
 - script: rm -rf ~/Library/Caches/com.apple.dt.Xcode/
