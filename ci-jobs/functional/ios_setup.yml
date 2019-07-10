@@ -3,7 +3,3 @@ steps:
   displayName: Xcode Select ${{ parameters.xcodeVersion }}
 - script: xcrun simctl list
   displayName: List Installed Simulators
-- script: xcrun simctl erase all
-  displayName: xcrun simctl erase all
-- script: xcrun simctl list
-  displayName: List Installed Simulators
