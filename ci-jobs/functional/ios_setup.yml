@@ -1,4 +1,6 @@
 steps:
+- script: reboot
+  displayName: rebooting...
 - script: sudo xcode-select -s /Applications/Xcode_${{ parameters.xcodeVersion }}.app/Contents/Developer
   displayName: Xcode Select ${{ parameters.xcodeVersion }}
 - script: xcrun simctl list
