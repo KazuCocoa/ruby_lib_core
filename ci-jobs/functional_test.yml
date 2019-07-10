@@ -17,7 +17,7 @@ jobs:
     steps:
     - template: ./functional/ios_setup.yml
       parameters:
-        xcodeVersion: 10.1
+        xcodeVersion: 10.2.1
     - template: ./functional/run_appium.yml
     - script: bundle exec rake test:func:ios TESTS=test/functional/ios/driver_test.rb,test/functional/ios/patch_test.rb
       displayName: Run tests
@@ -35,7 +35,7 @@ jobs:
     steps:
     - template: ./functional/ios_setup.yml
       parameters:
-        xcodeVersion: 10.1
+        xcodeVersion: 10.2.1
     - template: ./functional/run_appium.yml
     - script: bundle exec rake test:func:ios TESTS=test/functional/ios/webdriver/create_session_test.rb,test/functional/ios/webdriver/w3c_actions_test.rb
       displayName: Run tests
@@ -53,7 +53,7 @@ jobs:
     steps:
     - template: ./functional/ios_setup.yml
       parameters:
-        xcodeVersion: 10.1
+        xcodeVersion: 10.2.1
     - template: ./functional/run_appium.yml
     - script: bundle exec rake test:func:ios TESTS=test/functional/ios/webdriver/device_test.rb
       displayName: Run tests
@@ -71,7 +71,7 @@ jobs:
     steps:
     - template: ./functional/ios_setup.yml
       parameters:
-        xcodeVersion: 10.1
+        xcodeVersion: 10.2.1
     - template: ./functional/run_appium.yml
     - script: bundle exec rake test:func:ios TESTS=test/functional/ios/ios/device_test.rb
       displayName: Run tests
@@ -89,7 +89,7 @@ jobs:
     steps:
     - template: ./functional/ios_setup.yml
       parameters:
-        xcodeVersion: 10.1
+        xcodeVersion: 10.2.1
     - template: ./functional/run_appium.yml
     - script: npm install -g appium opencv4nodejs@4.17.0
       displayName: Install opencv4nodejs@4.17.0
@@ -109,7 +109,7 @@ jobs:
     steps:
     - template: ./functional/ios_setup.yml
       parameters:
-        xcodeVersion: 10.1
+        xcodeVersion: 10.2.1
     - script: brew install ffmpeg && brew tap wix/brew && brew install wix/brew/applesimutils
       displayName: Install ffmpeg and applesimutils
     - template: ./functional/run_appium.yml
@@ -129,7 +129,7 @@ jobs:
     steps:
     - template: ./functional/ios_setup.yml
       parameters:
-        xcodeVersion: 10.2
+        xcodeVersion: 10.2.1
     - template: ./functional/run_appium.yml
     - script: bundle exec rake test:func:ios TESTS=test/functional/ios/tv_driver_test.rb
       displayName: Run tests
