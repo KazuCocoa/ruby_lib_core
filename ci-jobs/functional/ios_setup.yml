@@ -1,15 +1,9 @@
 steps:
-- script: reboot
-  displayName: rebooting...
 - script: sudo xcode-select -s /Applications/Xcode_${{ parameters.xcodeVersion }}.app/Contents/Developer
   displayName: Xcode Select ${{ parameters.xcodeVersion }}
 - script: xcrun simctl list
   displayName: List Installed Simulators
-- script: rm -rf ~/Library/Caches/com.apple.dt.Xcode/
-  displayName: rm -rf ~/Library/Caches/com.apple.dt.Xcode/
-- script: rm -rf ~/Library/Developer/Xcode/DerivedData/
-  displayName: rm -rf ~/Library/Developer/Xcode/DerivedData/
-- script: rm -rf ~/Library/Caches/com.apple.dt.Xcode/
-  displayName: rm -rf ~/Library/Caches/com.apple.dt.Xcode/
-- script: xcrun --kill-cache
-  displayName: xcrun --kill-cache
+- script: xcrun simctl erase all
+  displayName: xcrun simctl erase all
+- script: xcrun simctl list
+  displayName: List Installed Simulators
