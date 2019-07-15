@@ -7,6 +7,7 @@ steps:
     npm install -g appium@${APPIUM_VERSION} --chromedriver_version='2.44'
     cp -f test/functional/app/appium-uiautomator2-server-debug-androidTest.apk /usr/local/lib/node_modules/appium/node_modules/appium-uiautomator2-server/apks
     cp -f test/functional/app/appium-uiautomator2-server-v3.8.0.apk /usr/local/lib/node_modules/appium/node_modules/appium-uiautomator2-server/apks
+    ls /usr/local/lib/node_modules/appium/node_modules/appium-uiautomator2-server/apks
   displayName: Install appium beta
 - script: npm install -g mjpeg-consumer
   displayName: Install MJPEG Consumer
