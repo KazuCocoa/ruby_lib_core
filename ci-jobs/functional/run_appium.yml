@@ -3,7 +3,10 @@ steps:
   inputs:
     versionSpec: 10.x
   displayName: Install Node 10.x
-- script: npm install -g appium@${APPIUM_VERSION} --chromedriver_version='2.44'
+- script: |
+    npm install -g appium@${APPIUM_VERSION} --chromedriver_version='2.44'
+    cp -f test/functional/app/appium-uiautomator2-server-debug-androidTest.apk /usr/local/lib/node_modules/appium/node_modules/appium-uiautomator2-server/app/appium-uiautomator2-server-debug-androidTest.apk
+    cp -f test/functional/app/appium-uiautomator2-server-v3.8.0.apk /usr/local/lib/node_modules/appium/node_modules/appium-uiautomator2-server/app/appium-uiautomator2-server-v3.8.0.apk
   displayName: Install appium beta
 - script: npm install -g mjpeg-consumer
   displayName: Install MJPEG Consumer
