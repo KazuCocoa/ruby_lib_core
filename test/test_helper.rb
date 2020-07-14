@@ -105,6 +105,10 @@ class AppiumLibCoreTest
       new.windows
     end
 
+    def self.mac
+      new.mac
+    end
+
     # Require a simulator which OS version is 11.4, for example.
     def ios(platform_name = :ios)
       platform_version = platform_name == :ios ? '13.5' : '13.4'
@@ -334,6 +338,28 @@ class AppiumLibCoreTest
           automationName: :windows,
           deviceName: 'WindowsPC',
           app: 'Microsoft.WindowsCalculator_8wekyb3d8bbwe!App'
+        },
+        appium_lib: {
+          export_session: true,
+          wait_timeout: 20,
+          wait_interval: 1
+        }
+      }
+    end
+
+
+    def mac
+      {
+        caps: {
+          platformName: :mac,
+          cookies: [
+              {name: 'loop_delay', value: 1.00},
+              {name: 'command_delay', value:0.100 },
+              {name: 'implicit_timeout', value: 3.000},
+              {name: 'mouse_speed', value: 50},
+              {name: 'screen_shot_on_error', value: true},
+              {name: 'global_diagnostics_directory', value: '~/Desktop/sample/neko'}
+          ]
         },
         appium_lib: {
           export_session: true,
