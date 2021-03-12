@@ -121,7 +121,7 @@ class AppiumLibCoreTest
 
     # Require a simulator which OS version is 11.4, for example.
     def ios(platform_name = :ios)
-      platform_version = '14.2'
+      platform_version = '12.4'
       wda_port = wda_local_port
 
       real_device = ENV['REAL'] ? true : false
@@ -199,9 +199,9 @@ class AppiumLibCoreTest
         'Apple TV'
       else
         name = if over_ios13?(os_version)
-                 'iPhone 11'
+                 'iPhone 8'
                else
-                 'iPhone Xs Max'
+                 'iPhone 8'
                end
 
         parallel? ? "#{name} - #{wda_local_port}" : name

@@ -2,8 +2,8 @@
 parameters:
   vmImage: 'macOS-10.15'
   vmImageForIOS: 'macOS-10.15' # Not sure the reason, but macOS 10.14 instance raises no info.plist error
-  xcodeForIOS: 12.2
-  xcodeForTVOS: 12.2
+  xcodeForIOS: 10.3
+  xcodeForTVOS: 10.3
   androidSDK: 29  # API Level 30 emulators are more unstable than 29
   appiumVersion: '1.16.0'
   ignoreVersionSkip: true
